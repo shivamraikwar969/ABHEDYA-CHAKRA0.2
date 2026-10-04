@@ -1,0 +1,24 @@
+/* Login page only. Scoped under .rk-login so nothing here can leak into the dashboard theme. */
+.rk-login .rk-rise { animation: rk-rise .7s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes rk-rise { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: none; } }
+.rk-login .rk-fade { animation: rk-fade .45s ease both; }
+@keyframes rk-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.rk-login .rk-shake { animation: rk-shake .45s cubic-bezier(.36,.07,.19,.97) both; }
+@keyframes rk-shake { 10%,90% { transform: translateX(-1px); } 20%,80% { transform: translateX(3px); } 30%,50%,70% { transform: translateX(-6px); } 40%,60% { transform: translateX(6px); } }
+.rk-login .rk-sweep { position: absolute; inset: -30%; background: conic-gradient(from 0deg, rgba(6,182,212,0) 0deg, rgba(6,182,212,.16) 40deg, rgba(6,182,212,0) 70deg); animation: rk-spin 9s linear infinite; border-radius: 9999px; pointer-events: none; }
+@keyframes rk-spin { to { transform: rotate(360deg); } }
+.rk-login .rk-node { animation: rk-float 7s ease-in-out infinite; }
+@keyframes rk-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+.rk-login .rk-dash { stroke-dasharray: 6 8; animation: rk-march 2.2s linear infinite; }
+@keyframes rk-march { to { stroke-dashoffset: -28; } }
+.rk-login .rk-pulse { animation: rk-pulse 2.4s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes rk-pulse { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(2.6); opacity: 0; } }
+.rk-login .rk-caret::after { content: "_"; animation: rk-blink 1s steps(1) infinite; }
+@keyframes rk-blink { 50% { opacity: 0; } }
+.rk-login .rk-spinner { width: 14px; height: 14px; border-radius: 9999px; border: 2px solid rgba(165,243,252,.3); border-top-color: #67e8f9; animation: rk-spin 0.7s linear infinite; }
+.rk-login .rk-exit { animation: rk-exit .6s ease forwards; }
+@keyframes rk-exit { to { opacity: 0; transform: scale(1.03); filter: blur(6px); } }
+.rk-login .rk-slider { transition: transform .35s cubic-bezier(.3,.9,.3,1); }
+.rk-login .rk-field { transition: border-color .2s, box-shadow .2s; }
+.rk-login .rk-field:focus-within { border-color: rgba(34,211,238,.8); box-shadow: 0 0 0 3px rgba(6,182,212,.12), 0 0 18px rgba(6,182,212,.18); }
+@media (prefers-reduced-motion: reduce) { .rk-login *, .rk-login *::before, .rk-login *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
